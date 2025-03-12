@@ -1,0 +1,19 @@
+[package]
+name = "capped_collections"
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+description = "Collections with compile-time set capacities."
+repository = "https://github.com/coruscateor/capped_collections"
+homepage = "https://coruscateor.com/projects/capped_collections"
+keywords = ["capped", "stack", "collection", "array", "capacity"]
+categories = ["memory-management"]
+
+[dependencies]
+serde = { version = "1.0.219", optional = true }
+corlib = "0.4.1"
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
+
