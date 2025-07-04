@@ -1,6 +1,10 @@
-use corlib::inc_dec::IncDecSelf;
+//use corlib::inc_dec::IncDecSelf;
 
-use crate::CappedVec;
+use inc_dec::IncDecSelf;
+
+//use crate::CappedVec;
+
+use super::CappedVec;
 
 #[test]
 fn push()

@@ -2,12 +2,16 @@
 
 #![cfg_attr(docsrs, feature(doc_auto_cfg))]
 
+pub mod capped_vec;
+
+/*
 mod capped_vec;
 
 pub use capped_vec::*;
 
 #[cfg(test)]
 mod capped_vec_tests;
+*/
 
 /*
 pub fn add(left: u64, right: u64) -> u64 {

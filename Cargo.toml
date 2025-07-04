@@ -11,7 +11,12 @@ categories = ["memory-management"]
 
 [dependencies]
 serde = { version = "1.0.219", optional = true }
-corlib = "0.4.1"
+
+#Disabled
+
+#corlib = "0.4.1"
+
+inc_dec = "0.1.0"
 
 [package.metadata.docs.rs]
 all-features = true

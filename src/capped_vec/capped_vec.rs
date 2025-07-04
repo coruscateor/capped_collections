@@ -2,7 +2,11 @@ use core::panic;
 
 use std::{array, ascii::escape_default, fmt::Display, mem, ops::{Index, IndexMut}, slice::{Iter, IterMut}};
 
-use corlib::inc_dec::*;
+//Disabled
+
+//use corlib::inc_dec::*;
+
+use inc_dec::*;
 
 use std::fmt::Debug;
 
@@ -200,6 +204,31 @@ impl<T, const N: usize> CappedVec<T, N>
 
     }
 
+    pub fn iter<'a>(&'a self) -> Iter<'a, T>
+    {
+
+        let last_index;
+
+        if self.len > 1
+        {
+
+            last_index = self.len - 1;
+
+        }
+        else
+        {
+
+            return self.array[..].iter();
+            
+        }
+
+        self.array[..last_index].iter()
+
+    }
+
+    //Disabled
+
+    /*
     pub fn iter<'a>(&'a self) -> CappedVecIterator<'a, T>
     {
 
@@ -221,7 +250,33 @@ impl<T, const N: usize> CappedVec<T, N>
         CappedVecIterator::new(self.array[..last_index].iter())
 
     }
+    */
 
+    pub fn iter_mut<'a>(&'a mut self) -> IterMut<'a, T>
+    {
+
+        let last_index;
+
+        if self.len > 1
+        {
+
+            last_index = self.len - 1;
+
+        }
+        else
+        {
+
+            return self.array[..].iter_mut();
+            
+        }
+
+        self.array[..last_index].iter_mut()
+
+    }
+
+    //Disabled
+
+    /*
     pub fn iter_mut<'a>(&'a mut self) -> CappedVecIteratorMut<'a, T>
     {
 
@@ -243,6 +298,7 @@ impl<T, const N: usize> CappedVec<T, N>
         CappedVecIteratorMut::new(self.array[..last_index].iter_mut())
 
     }
+    */
 
     pub fn insert(&mut self, index: usize, item: T) -> Option<T>
     {
@@ -720,6 +776,9 @@ impl<T, const N: usize> Serialize for CappedVec<T, N>
 
 //CappedVecIterator
 
+//Disabled
+
+/*
 ///
 /// The iterator for CappedVec which provides immutable references.
 /// 
@@ -771,7 +830,11 @@ impl<'a, T> Iterator for CappedVecIterator<'a, T>
     }
 
 }
+*/
 
+//Disabled
+
+/*
 ///
 /// The iterator for CappedVec which provides mutable references.
 /// 
@@ -823,3 +886,4 @@ impl<'a, T> Iterator for CappedVecIteratorMut<'a, T>
     }
 
 }
+*/

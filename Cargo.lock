@@ -6,36 +6,15 @@ version = 4
 name = "capped_collections"
 version = "0.2.0-alpha"
 dependencies = [
- "corlib",
+ "inc_dec",
  "serde",
 ]
 
 [[package]]
-name = "cfg-if"
-version = "1.0.0"
+name = "inc_dec"
+version = "0.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
-
-[[package]]
-name = "corlib"
-version = "0.4.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f22336a81a50e4e1223a25f1bb562cb57b24ee819490197352234a25fdf59eb5"
-dependencies = [
- "cfg-if",
- "delegate",
-]
-
-[[package]]
-name = "delegate"
-version = "0.13.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "297806318ef30ad066b15792a8372858020ae3ca2e414ee6c2133b1eb9e9e945"
-dependencies = [
- "proc-macro2",
- "quote",
- "syn",
-]
+checksum = "1cec1f165fe69f11a3d078397ff15a2a4c281f1bfcade8ec4e40406a6b26ead1"
 
 [[package]]
 name = "proc-macro2"
