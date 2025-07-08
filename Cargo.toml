@@ -18,6 +18,8 @@ serde = { version = "1.0.219", optional = true }
 
 inc_dec = "0.1.0"
 
+delegate = "0.13.3"
+
 [package.metadata.docs.rs]
 all-features = true
 rustdoc-args = ["--cfg", "docsrs"]

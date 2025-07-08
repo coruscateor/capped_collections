@@ -6,8 +6,20 @@ version = 4
 name = "capped_collections"
 version = "0.2.0-alpha"
 dependencies = [
+ "delegate",
  "inc_dec",
  "serde",
+]
+
+[[package]]
+name = "delegate"
+version = "0.13.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b9b6483c2bbed26f97861cf57651d4f2b731964a28cd2257f934a4b452480d21"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
 ]
 
 [[package]]

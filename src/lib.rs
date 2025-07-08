@@ -4,6 +4,10 @@
 
 pub mod capped_vec;
 
+pub mod capped_map;
+
+pub mod capped_set;
+
 /*
 mod capped_vec;
 
