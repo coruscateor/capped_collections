@@ -4,9 +4,13 @@
 
 pub mod capped_vec;
 
+//pub struct capped_vec::CappedVec;
+
 pub mod capped_map;
 
 pub mod capped_set;
+
+pub mod capped_deque;
 
 /*
 mod capped_vec;

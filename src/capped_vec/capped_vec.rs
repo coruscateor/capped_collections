@@ -1,6 +1,6 @@
 use core::panic;
 
-use std::{array, ascii::escape_default, fmt::Display, mem, ops::{Index, IndexMut}, slice::{Iter, IterMut}};
+use core::{array, ascii::escape_default, fmt::Display, mem, ops::{Index, IndexMut}, slice::{Iter, IterMut}};
 
 //Disabled
 
@@ -8,9 +8,9 @@ use std::{array, ascii::escape_default, fmt::Display, mem, ops::{Index, IndexMut
 
 use inc_dec::*;
 
-use std::fmt::Debug;
+use core::fmt::Debug;
 
-use std::mem::take;
+use core::mem::take;
 
 #[cfg(feature = "serde")]
 use serde::ser::SerializeSeq;

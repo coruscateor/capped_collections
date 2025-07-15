@@ -2,7 +2,7 @@ use crate::capped_vec::CappedVec;
 
 use delegate::delegate;
 
-use std::slice::{Iter, IterMut};
+use core::slice::{Iter, IterMut};
 
 pub struct CappedMap<K, V, const N: usize>
     where K: PartialEq
