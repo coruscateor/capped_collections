@@ -4,13 +4,25 @@
 
 pub mod capped_vec;
 
-//pub struct capped_vec::CappedVec;
-
 pub mod capped_map;
 
 pub mod capped_set;
 
 pub mod capped_deque;
+
+pub mod capped_queue;
+
+//Re-exports
+
+pub use capped_deque::CappedDeque;
+
+pub use capped_map::CappedMap;
+
+pub use capped_queue::CappedQueue;
+
+pub use capped_set::CappedSet;
+
+pub use capped_vec::CappedVec;
 
 /*
 mod capped_vec;

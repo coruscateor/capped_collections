@@ -281,13 +281,79 @@ impl<T, const N: usize> CappedDeque<T, N>
 
     }
 
-    //push_front
+    pub fn pop_front(&mut self) -> Option<T>
+    {
 
-    //push_back
+        if self.has_capacity()
+        {
 
-    //pop_front
+            if self.len > 0
+            {
 
-    //pop_back
+                let value = take(&mut self.array[self.front_index]);
+
+                self.len.mm();
+
+                if self.len > 0 && self.front_index == 0
+                {
+
+                    //Wrap
+
+                    self.front_index = self.capacity() - 1;
+
+                }
+                else
+                {
+
+                    self.front_index.mm();
+                    
+                }
+
+                return Some(value);
+
+            }
+
+        }
+
+        None
+
+    }
+
+    pub fn pop_back(&mut self) -> Option<T>
+    {
+
+        if let Some(last_index) = self.last_capacity_index()
+        {
+
+            if self.len > 0
+            {
+
+                let value = take(&mut self.array[self.back_index]);
+
+                self.len.mm();
+
+                if self.len > 0 && self.back_index == last_index
+                {
+
+                    self.back_index = 0;
+
+                }
+                else
+                {
+
+                    self.back_index.pp();
+                    
+                }
+
+                return Some(value);
+
+            }
+
+        }
+
+        None
+
+    }
 
     //pop_front_if
 
@@ -317,16 +383,78 @@ impl<T, const N: usize> CappedDeque<T, N>
 
     //drain
 
-    //clear
+    pub fn clear(&mut self)
+    {
+
+        while self.pop_back().is_some()
+        {
+        }
+
+    }
 
     //contains
 
-    //front
+    pub fn front(&self) -> Option<&T>
+    {
 
-    //front_mut
+        if self.has_capacity() && self.len > 0
+        {
 
-    //back
+            return Some(&self.array[self.front_index]);
 
-    //back_mut
+        }
+
+        None
+
+    }
+
+    pub fn front_mut(&mut self) -> Option<&mut T>
+    {
+
+        if self.has_capacity() && self.len > 0
+        {
+
+            return Some(&mut self.array[self.front_index]);
+
+        }
+
+        None
+
+    }
+
+    pub fn back(&self) -> Option<&T>
+    {
+
+        if self.has_capacity() && self.len > 0
+        {
+
+            return Some(&self.array[self.back_index]);
+
+        }
+
+        None
+
+    }
+
+    pub fn back_mut(&mut self) -> Option<&mut T>
+    {
+
+        if self.has_capacity() && self.len > 0
+        {
+
+            return Some(&mut self.array[self.back_index]);
+
+        }
+
+        None
+
+    }
+
+    pub fn front_is_back(&self) -> bool
+    {
+
+        self.front_index == self.back_index
+
+    }
 
 }
