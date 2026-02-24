@@ -104,6 +104,10 @@ impl<T, const N: usize> CappedSet<T, N>
 
             pub fn clear(&mut self);
 
+            pub fn reset(&mut self);
+
+            pub fn clear_completely(&mut self);
+
             pub fn contains(&self, val_ref: &T) -> bool;
 
         }

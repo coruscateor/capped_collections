@@ -411,6 +411,35 @@ impl<T, const N: usize> CappedVec<T, N>
 
     }
 
+    ///
+    /// Sets the length to zero, skipping the process of resetting each valid element to its default value.
+    /// 
+    /// Quicker than clearing operations, however previously valid objects are now "lost" until the internal array is dropped.
+    /// 
+    pub fn reset(&mut self)
+    {
+
+        self.len = 0;
+
+    }
+
+    ///
+    /// Clear the entire internal array, including invalid elements.
+    /// 
+    pub fn clear_completely(&mut self)
+    {
+
+        for item in self.array.iter_mut()
+        {
+
+            *item = T::default();
+
+        }
+
+        self.len = 0;
+
+    }
+
     pub fn first(&self) -> Option<&T>
     {
 

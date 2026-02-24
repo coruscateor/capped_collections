@@ -59,6 +59,10 @@ impl<T, const N: usize> CappedQueue<T, N>
 
             pub fn clear(&mut self);
 
+            pub fn reset(&mut self);
+
+            pub fn clear_completely(&mut self);
+
             pub fn front(&self) -> Option<&T>;
 
             pub fn front_mut(&mut self) -> Option<&mut T>;

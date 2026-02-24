@@ -183,6 +183,10 @@ impl<K, V, const N: usize> CappedMap<K, V, N>
 
             pub fn clear(&mut self);
 
+            pub fn reset(&mut self);
+
+            pub fn clear_completely(&mut self);
+
         }
 
     }
