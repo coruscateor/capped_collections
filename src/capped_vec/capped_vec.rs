@@ -114,6 +114,13 @@ impl<T, const N: usize> CappedVec<T, N>
 
     }
 
+    pub const fn has_capacity(&self) -> bool
+    {
+
+        self.capacity() > 0
+
+    }
+
     pub fn last_index(&self) -> Option<usize>
     {
 

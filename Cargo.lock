@@ -3,19 +3,27 @@
 version = 4
 
 [[package]]
+name = "accessorise"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e86cf82339b10210c4212aee2e4f034fb6b9d181d98d07b98eb98f90b2aca91c"
+
+[[package]]
 name = "capped_collections"
 version = "0.2.0-alpha"
 dependencies = [
+ "accessorise",
  "delegate",
  "inc_dec",
+ "paste",
  "serde",
 ]
 
 [[package]]
 name = "delegate"
-version = "0.13.4"
+version = "0.13.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6178a82cf56c836a3ba61a7935cdb1c49bfaa6fa4327cd5bf554a503087de26b"
+checksum = "780eb241654bf097afb00fc5f054a09b687dad862e485fdcf8399bb056565370"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -27,6 +35,12 @@ name = "inc_dec"
 version = "0.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1cec1f165fe69f11a3d078397ff15a2a4c281f1bfcade8ec4e40406a6b26ead1"
+
+[[package]]
+name = "paste"
+version = "1.0.15"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "57c0d7b74b563b49d38dae00a0c37d4d6de9b432382b2892f0574ddcae73fd0a"
 
 [[package]]
 name = "proc-macro2"
