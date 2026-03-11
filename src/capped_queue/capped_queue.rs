@@ -7,15 +7,13 @@ use serde::{Serialize, Serializer};
 
 use delegate::delegate;
 
-use crate::CappedDeque;
-
-//use crate::capped_deque::CappedDeque;
+use crate::CappedVecDeque;
 
 pub struct CappedQueue<T, const N: usize>
     where T: Default
 {
 
-    capped_deque: CappedDeque<T, N>
+    capped_deque: CappedVecDeque<T, N>
 
 }
 
@@ -29,7 +27,7 @@ impl<T, const N: usize> CappedQueue<T, N>
         Self
         {
 
-            capped_deque: CappedDeque::new()
+            capped_deque: CappedVecDeque::new()
 
         }
 

@@ -18,7 +18,7 @@ use serde::ser::SerializeSeq;
 #[cfg(feature = "serde")]
 use serde::{Serialize, Serializer};
 
-pub struct CappedDeque<T, const N: usize>
+pub struct CappedVecDeque<T, const N: usize>
     where T: Default
 {
 
@@ -29,7 +29,7 @@ pub struct CappedDeque<T, const N: usize>
 
 }
 
-impl<T, const N: usize> CappedDeque<T, N>
+impl<T, const N: usize> CappedVecDeque<T, N>
     where T: Default
 {
 
@@ -386,9 +386,18 @@ impl<T, const N: usize> CappedDeque<T, N>
     pub fn clear(&mut self)
     {
 
-        while self.pop_back().is_some()
+        let last_index = self.len - 1;
+
+        for item in self.array[..last_index].iter_mut()
         {
+
+            *item = T::default();
+
         }
+
+        //while self.pop_back().is_some()
+        //{
+        //}
 
         self.len = 0;
 

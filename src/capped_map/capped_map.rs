@@ -1,8 +1,10 @@
 use crate::capped_vec::CappedVec;
 
 use delegate::delegate;
+use inc_dec::IncDecSelf;
 
 use core::slice::{Iter, IterMut};
+use std::ops::Index;
 
 pub struct CappedMap<K, V, const N: usize>
     where K: PartialEq
@@ -167,6 +169,62 @@ impl<K, V, const N: usize> CappedMap<K, V, N>
         }
 
         None
+
+    }
+
+    pub fn remove_entry(&mut self, k: &K) -> Option<(K, V)>
+    {
+
+        let mut index = 0;
+
+        let mut index_found = false;
+
+        for item in self.iter()
+        {
+
+            if item.0 == *k
+            {
+
+                index_found = true;
+
+                break;
+
+            }
+
+            index.pp();
+
+        }
+
+        if index_found
+        {
+
+            self.capped_vec.remove(index).flatten()
+
+        }
+        else
+        {
+
+            None
+            
+        }
+
+    }
+
+    pub fn remove(&mut self, k: &K) -> Option<V>
+    {
+
+        if let Some((_, v)) = self.remove_entry(k)
+        {
+
+            Some(v)
+
+        }
+        else
+        {
+
+            None
+            
+        }
 
     }
 

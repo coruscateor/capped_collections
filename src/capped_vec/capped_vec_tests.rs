@@ -74,3 +74,115 @@ fn push_iter()
     }
 
 }
+
+#[test]
+fn push_then_clear()
+{
+
+    let mut capped_vec = CappedVec::<i32, 5>::new();
+
+    capped_vec.push(1);
+
+    capped_vec.push(2);
+
+    capped_vec.push(3);
+
+    capped_vec.push(4);
+
+    capped_vec.clear();
+
+    assert_eq!(capped_vec.len(), 0);
+    
+}
+
+#[test]
+fn push_then_reset()
+{
+
+    let mut capped_vec = CappedVec::<i32, 5>::new();
+
+    capped_vec.push(1);
+
+    capped_vec.push(2);
+
+    capped_vec.push(3);
+
+    capped_vec.push(4);
+
+    capped_vec.reset();
+
+    assert_eq!(capped_vec.len(), 0);
+    
+}
+
+#[test]
+fn push_then_clear_completely()
+{
+
+    let mut capped_vec = CappedVec::<i32, 5>::new();
+
+    capped_vec.push(1);
+
+    capped_vec.push(2);
+
+    capped_vec.push(3);
+
+    capped_vec.push(4);
+
+    capped_vec.clear_completely();
+
+    assert_eq!(capped_vec.len(), 0);
+    
+}
+
+#[test]
+fn push_then_clear_then_reset_then_clear_completely()
+{
+
+    let mut capped_vec = CappedVec::<i32, 5>::new();
+
+    capped_vec.push(1);
+
+    capped_vec.push(2);
+
+    capped_vec.push(3);
+
+    capped_vec.push(4);
+
+    capped_vec.clear();
+
+    assert_eq!(capped_vec.len(), 0);
+
+    capped_vec.push(1);
+
+    capped_vec.push(2);
+
+    capped_vec.push(3);
+
+    capped_vec.push(4);
+
+    capped_vec.reset();
+
+    assert_eq!(capped_vec.len(), 0);
+
+    capped_vec.push(1);
+
+    capped_vec.push(2);
+    
+    capped_vec.clear_completely();
+
+    assert_eq!(capped_vec.len(), 0);
+
+    capped_vec.push(1);
+
+    capped_vec.push(2);
+
+    capped_vec.push(3);
+
+    capped_vec.push(4);
+
+    capped_vec.push(5);
+
+     assert_eq!(capped_vec.len(), 5);
+    
+}

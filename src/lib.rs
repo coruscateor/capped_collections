@@ -8,13 +8,13 @@ pub mod capped_map;
 
 pub mod capped_set;
 
-pub mod capped_deque;
+pub mod capped_vec_deque;
 
 pub mod capped_queue;
 
 //Re-exports
 
-pub use capped_deque::CappedDeque;
+pub use capped_vec_deque::CappedVecDeque;
 
 pub use capped_map::CappedMap;
 

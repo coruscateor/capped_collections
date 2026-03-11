@@ -400,22 +400,17 @@ impl<T, const N: usize> CappedVec<T, N>
     pub fn clear(&mut self)
     {
 
-        if self.len > 0
+        let last_index = self.len - 1;
+
+        for item in self.array[..last_index].iter_mut()
         {
 
-            let last_index = self.len - 1;
-
-            for item in self.array[..last_index].iter_mut()
-            {
-    
-                *item = T::default();
-    
-            }
-
-            self.len = 0;
+            *item = T::default();
 
         }
 
+        self.len = 0;
+        
     }
 
     ///
