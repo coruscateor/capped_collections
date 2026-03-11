@@ -2,6 +2,8 @@ use core::panic;
 
 use core::{array, ascii::escape_default, fmt::Display, mem, ops::{Index, IndexMut}, slice::{Iter, IterMut}};
 
+use core::ops::Range;
+
 //Disabled
 
 //use corlib::inc_dec::*;
@@ -146,7 +148,7 @@ impl<T, const N: usize> CappedVec<T, N>
     pub fn try_index(&mut self, index: usize) -> Option<&T>
     {
 
-        if index < self.capacity()
+        if index < self.len()
         {
 
             Some(&self.array[index])
@@ -161,19 +163,10 @@ impl<T, const N: usize> CappedVec<T, N>
 
     }
 
-    pub fn try_mut_index(&mut self, index: usize) -> Option<&mut T>
+    pub fn try_index_mut(&mut self, index: usize) -> Option<&mut T>
     {
 
-        if self.len == 0
-        {
-
-            return None;
-
-        }
-
-        let last_index = self.len - 1;
-
-        if index <= last_index
+        if index < self.len()
         {
 
             Some(&mut self.array[index])
@@ -214,22 +207,32 @@ impl<T, const N: usize> CappedVec<T, N>
     pub fn iter<'a>(&'a self) -> Iter<'a, T>
     {
 
-        let last_index;
+        return self.array[..self.len].iter();
 
-        if self.len > 1
-        {
+        //let slice_len;
 
-            last_index = self.len - 1;
+        //let last_index;
 
-        }
-        else
-        {
+        //if self.len > 1
+        //{
 
-            return self.array[..].iter();
+            //last_index = self.len - 1;
+
+            //slice_len = self.len;
+
+        //}
+        //else
+        //{
+
+            //slice_len = 0;
+
+            //last_index = 0;
+
+            //return self.array[..].iter();
             
-        }
+        //}
 
-        self.array[..last_index].iter()
+        //self.array[..last_index].iter()
 
     }
 
@@ -262,6 +265,9 @@ impl<T, const N: usize> CappedVec<T, N>
     pub fn iter_mut<'a>(&'a mut self) -> IterMut<'a, T>
     {
 
+        self.array[..self.len].iter_mut()
+
+        /*
         let last_index;
 
         if self.len > 1
@@ -278,6 +284,7 @@ impl<T, const N: usize> CappedVec<T, N>
         }
 
         self.array[..last_index].iter_mut()
+        */
 
     }
 
@@ -321,18 +328,18 @@ impl<T, const N: usize> CappedVec<T, N>
         else if index <= self.len && !self.is_full()
         {
 
-            let mut current_index = self.len - 1;
+            let mut last_index = self.len - 1;
 
             //Move all items including that at the specified index to the right.
 
-            while current_index >= index
+            while last_index >= index
             {
 
-                let current_item = mem::take(&mut self.array[current_index]);
+                let current_item = mem::take(&mut self.array[last_index]);
 
-                self.array[current_index + 1] = current_item;
+                self.array[last_index + 1] = current_item;
 
-                current_index.mm();
+                last_index.mm();
 
             }
 
@@ -370,16 +377,16 @@ impl<T, const N: usize> CappedVec<T, N>
 
             //Move all items to the left to close the gap.
 
-            let mut current_index = index + 1;
+            let mut last_index = index + 1;
 
-            while current_index < self.len
+            while last_index < self.len
             {
 
-                let current_item = mem::take(&mut self.array[current_index]);
+                let current_item = mem::take(&mut self.array[last_index]);
 
-                self.array[current_index - 1] = current_item;
+                self.array[last_index - 1] = current_item;
 
-                current_index.pp();
+                last_index.pp();
 
             }
 
@@ -528,6 +535,9 @@ impl<T, const N: usize> CappedVec<T, N>
     pub fn as_slice(&self) -> &[T]
     {
 
+        &self.array[..self.len]
+
+        /*
         if self.len == 0
         {
 
@@ -541,12 +551,16 @@ impl<T, const N: usize> CappedVec<T, N>
             &self.array[..last_index]
             
         }
+        */
         
     }
 
-    pub fn as_mut_slice(&mut self) -> &mut [T]
+    pub fn as_slice_mut(&mut self) -> &mut [T]
     {
 
+        &mut self.array[..self.len]
+
+        /*
         if self.len == 0
         {
 
@@ -560,6 +574,7 @@ impl<T, const N: usize> CappedVec<T, N>
             self.array[..last_index].as_mut()
             
         }
+        */
         
     }
 
@@ -567,7 +582,9 @@ impl<T, const N: usize> CappedVec<T, N>
         where T: PartialEq
     {
 
-        for item in self.iter()
+        let iter = self.iter();
+
+        for item in iter
         {
 
             if item == val_ref
@@ -804,6 +821,56 @@ impl<T, const N: usize> Serialize for CappedVec<T, N>
     }
 
 }
+
+//https://doc.rust-lang.org/std/ops/index.html
+
+//Disabled
+
+/*
+impl<T, const N: usize> Index<Range<usize>> for CappedVec<T, N>
+    where T: Default
+{
+
+    //type Output = Option<&T>;
+
+    type Output = T;
+
+    fn index(&self, index: Range<usize>) -> &Self::Output
+    {
+
+        if index >= self.len
+        {
+
+            panic!("Error: The provided index is out of bounds")
+
+        }
+
+        &self.array[index]
+
+    }
+
+}
+
+impl<T, const N: usize> IndexMut<usize> for CappedVec<T, N>
+    where T: Default
+{
+
+    fn index_mut(&mut self, index: usize) -> &mut Self::Output
+    {
+
+        if index >= self.len
+        {
+
+            panic!("Error: The provided index is out of bounds")
+
+        }
+
+        &mut self.array[index]
+
+    }
+
+}
+*/
 
 //CappedVecIterator
 
