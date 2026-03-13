@@ -76,6 +76,18 @@ fn push_iter()
 }
 
 #[test]
+fn clear_empty()
+{
+
+    let mut capped_vec = CappedVec::<i32, 5>::new();
+
+    capped_vec.clear();
+
+    assert_eq!(capped_vec.len(), 0);
+    
+}
+
+#[test]
 fn push_then_clear()
 {
 

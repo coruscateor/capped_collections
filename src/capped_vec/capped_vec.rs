@@ -407,17 +407,22 @@ impl<T, const N: usize> CappedVec<T, N>
     pub fn clear(&mut self)
     {
 
-        let last_index = self.len - 1;
-
-        for item in self.array[..last_index].iter_mut()
+        if self.len > 0
         {
 
-            *item = T::default();
+            let last_index = self.len - 1;
+
+            for item in self.array[..last_index].iter_mut()
+            {
+
+                *item = T::default();
+
+            }
+
+            self.len = 0;            
 
         }
 
-        self.len = 0;
-        
     }
 
     ///
@@ -790,7 +795,6 @@ impl<T, const N: usize> Clone for CappedVec<T, N>
 impl<T, const N: usize> Copy for CappedVec<T, N>
     where T: Default + Copy
 {
-
 }
 
 #[cfg(feature = "serde")]

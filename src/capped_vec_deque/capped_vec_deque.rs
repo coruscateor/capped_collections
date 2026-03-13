@@ -386,24 +386,29 @@ impl<T, const N: usize> CappedVecDeque<T, N>
     pub fn clear(&mut self)
     {
 
-        let last_index = self.len - 1;
+        if self.len > 0
+        {        
 
-        for item in self.array[..last_index].iter_mut()
-        {
+            let last_index = self.len - 1;
 
-            *item = T::default();
+            for item in self.array[..last_index].iter_mut()
+            {
+
+                *item = T::default();
+
+            }
+
+            //while self.pop_back().is_some()
+            //{
+            //}
+
+            self.len = 0;
+
+            self.front_index = 0;
+
+            self.back_index = 0;
 
         }
-
-        //while self.pop_back().is_some()
-        //{
-        //}
-
-        self.len = 0;
-
-        self.front_index = 0;
-
-        self.back_index = 0;
 
     }
 
@@ -510,3 +515,31 @@ impl<T, const N: usize> CappedVecDeque<T, N>
     }
 
 }
+
+impl<T, const N: usize> Debug for CappedVecDeque<T, N>
+    where T: Debug + Default
+{
+
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        f.debug_struct("CappedVecDeque").field("array", &self.array).field("len", &self.len).field("front_index", &self.front_index).field("back_index", &self.back_index).finish()
+    }
+
+}
+
+impl<T, const N: usize> Clone for CappedVecDeque<T, N>
+    where T: Clone + Default
+{
+
+    fn clone(&self) -> Self {
+        Self { array: self.array.clone(), len: self.len.clone(), front_index: self.front_index.clone(), back_index: self.back_index.clone() }
+    }
+
+}
+
+impl<T, const N: usize> Copy for CappedVecDeque<T, N>
+    where T: Default + Copy
+{
+}
+
+
+
