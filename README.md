@@ -25,6 +25,8 @@ Collections with compile-time set capacities.
 
 ```rust
 
+    use capped_collections::CappedVec;
+
     //Initialising and pushing values
 
     let mut capped_vec = CappedVec::<i32, 5>::new();
@@ -43,6 +45,8 @@ Collections with compile-time set capacities.
 
 ```rust
 
+    use capped_collections::CappedVec;
+
     //Pushing then poping
 
     let mut capped_vec = CappedVec::<i32, 5>::new();
@@ -60,6 +64,10 @@ Collections with compile-time set capacities.
 ```
 
 ```rust
+
+    use capped_collections::CappedVec;
+
+    use inc_dec::IncDecSelf;
 
     //Pushing then iterating the contents.
 
@@ -86,6 +94,32 @@ Collections with compile-time set capacities.
 
 ```
 
+```rust
+
+    use capped_collections::CappedVec;
+
+    //Reseting
+
+    let mut capped_vec = CappedVec::<i32, 5>::new();
+
+    capped_vec.push(1);
+
+    capped_vec.push(2);
+
+    capped_vec.push(3);
+
+    capped_vec.push(4);
+
+    assert_eq!(capped_vec.len(), 4);
+
+    //Reset the CappedVec without iterating and removing each element (i.e. clearing).
+
+    capped_vec.reset();
+
+    assert_eq!(capped_vec.len(), 0);
+
+```
+
 ## Todo:
 
 - Add more documentation
@@ -101,6 +135,10 @@ This project uses a coding style the emphasises the use of white space over keep
 So this:
 
 ```rust
+fn bar()
+{
+}
+
 fn foo()
 {
 
@@ -113,6 +151,8 @@ fn foo()
 Not this:
 
 ```rust
+fn bar(){}
+
 fn foo()
 {
     bar();

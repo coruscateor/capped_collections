@@ -3,6 +3,7 @@ use core::slice::Iter;
 use crate::capped_vec::CappedVec;
 
 use delegate::delegate;
+
 use inc_dec::IncDecSelf;
 
 pub struct CappedSet<T, const N: usize>
