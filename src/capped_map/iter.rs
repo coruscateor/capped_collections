@@ -1,17 +1,17 @@
-use std::fmt::Debug;
+use core::fmt::Debug;
 
 
 pub struct Iter<'a, K: 'a, V: 'a>
 {
 
-    slice_iter: std::slice::Iter<'a, Option<(K, V)>>
+    slice_iter: core::slice::Iter<'a, Option<(K, V)>>
 
 }
 
 impl<'a, K, V> Iter<'a, K, V>
 {
 
-    pub fn new(slice_iter: std::slice::Iter<'a, Option<(K, V)>>) -> Self
+    pub fn new(slice_iter: core::slice::Iter<'a, Option<(K, V)>>) -> Self
     {
 
         Self
@@ -70,7 +70,7 @@ impl<'a, K, V> Debug for Iter<'a, K, V>
     where K: Debug, V: Debug
 {
 
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
         f.debug_struct("Iter").field("slice_iter", &self.slice_iter).finish()
     }
 

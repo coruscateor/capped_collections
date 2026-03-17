@@ -719,7 +719,7 @@ impl<T, const N: usize> Display for CappedVec<T, N>
     where T: Display + Default //+ Copy
 {
 
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result
     {
 
         let last_index;
@@ -775,7 +775,7 @@ impl<T, const N: usize> Debug for CappedVec<T, N>
     where T: Debug + Default //+ Copy
 {
 
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
         f.debug_struct("CappedVec").field("array", &self.array).field("len", &self.len).finish()
     }
 

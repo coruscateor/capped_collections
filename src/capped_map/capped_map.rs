@@ -1,10 +1,12 @@
 use crate::capped_vec::CappedVec;
 
 use delegate::delegate;
+
 use inc_dec::IncDecSelf;
 
 use core::slice::{Iter, IterMut};
-use std::ops::Index;
+
+use core::ops::Index;
 
 pub struct CappedMap<K, V, const N: usize>
     where K: PartialEq

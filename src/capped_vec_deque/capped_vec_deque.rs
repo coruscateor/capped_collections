@@ -520,7 +520,7 @@ impl<T, const N: usize> Debug for CappedVecDeque<T, N>
     where T: Debug + Default
 {
 
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
         f.debug_struct("CappedVecDeque").field("array", &self.array).field("len", &self.len).field("front_index", &self.front_index).field("back_index", &self.back_index).finish()
     }
 
