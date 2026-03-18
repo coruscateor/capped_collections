@@ -1,29 +1,24 @@
 [package]
 name = "capped_collections"
-version = "0.2.0-alpha"
+version = "0.2.0-beta"
 edition = "2024"
 license = "MIT OR Apache-2.0"
 description = "Collections with compile-time set capacities."
 repository = "https://github.com/coruscateor/capped_collections"
 homepage = "https://coruscateor.com/projects/capped_collections"
-keywords = ["capped", "stack", "collection", "array", "capacity"]
-categories = ["memory-management"]
+keywords = ["capped", "vec", "map", "array", "set"]
+categories = ["data-structures", "no-std"]
+authors = ["Paul Saunders"]
 
 [dependencies]
 
 serde = { version = "1.0.228", optional = true }
-
-#Disabled
-
-#corlib = "0.4.1"
 
 inc_dec = "0.1.0"
 
 delegate = "0.13.5"
 
 accessorise = "0.2.0"
-
-paste = "1.0.15"
 
 [features]
 no_std = []
