@@ -1,4 +1,4 @@
-commit c144fc991809533f02a1126a4503aa51659b10d4
+commit c144fc991809533f02a1126a4503aa51659b10d4 -
 Author: Paul Saunders <coruscateor@users.noreply.github.com>
 Date:   Tue Mar 17 18:41:56 2026 +1300
 
@@ -10,7 +10,7 @@ Date:   Tue Mar 17 18:41:56 2026 +1300
     
     - Replaced doc_auto_cfg with doc_cfg in the docsrs cfg_attr in the crate root module.
 
-commit 590a2a78f498b9ed630eb26c95c8b23861057afb
+commit 590a2a78f498b9ed630eb26c95c8b23861057afb -
 Author: Paul Saunders <coruscateor@users.noreply.github.com>
 Date:   Mon Mar 16 18:52:46 2026 +1300
 
@@ -18,7 +18,7 @@ Date:   Mon Mar 16 18:52:46 2026 +1300
     
     - Added a CappedVec reset test to the readme.
 
-commit fc99263ef5fe9de0957fe3c1b594337c06fcba54
+commit fc99263ef5fe9de0957fe3c1b594337c06fcba54 -
 Author: Paul Saunders <coruscateor@users.noreply.github.com>
 Date:   Fri Mar 13 17:15:38 2026 +1300
 
