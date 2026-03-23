@@ -32,7 +32,7 @@ Date:   Fri Mar 13 17:15:38 2026 +1300
     
     - Added the capped_vec_deque_tests sub-module to the capped_vec_deque module.
 
-commit 5319d3c122756598629cd767ce2e9f07d5dba269
+commit 5319d3c122756598629cd767ce2e9f07d5dba269 -
 Author: Paul Saunders <coruscateor@users.noreply.github.com>
 Date:   Wed Mar 11 20:13:14 2026 +1300
 
@@ -48,7 +48,7 @@ Date:   Wed Mar 11 20:13:14 2026 +1300
     
     - Added the push_insert_remove, first_last, try_index_try_index_mut, contains, iterators and basic_slices test functions to the capped_vec_tests module.
 
-commit 4dcf28b8f599fb73bb50c82e3cbed97dbffd72d1
+commit 4dcf28b8f599fb73bb50c82e3cbed97dbffd72d1 -
 Author: Paul Saunders <coruscateor@users.noreply.github.com>
 Date:   Wed Mar 11 14:36:22 2026 +1300
 
@@ -60,7 +60,7 @@ Date:   Wed Mar 11 14:36:22 2026 +1300
     
     - Added the push_then_clear, push_then_reset, push_then_clear_completely and the push_then_clear_then_reset_then_clear_completely test functions to the capped_vec_tests module.
 
-commit ac5eabf269161cf0e5237230cf3486b7324c93fe
+commit ac5eabf269161cf0e5237230cf3486b7324c93fe -
 Author: Paul Saunders <coruscateor@users.noreply.github.com>
 Date:   Tue Mar 3 14:41:54 2026 +1300
 
@@ -72,7 +72,7 @@ Date:   Tue Mar 3 14:41:54 2026 +1300
     
     - Added a has_capacity method to the CappedVec sturct.
 
-commit bf84a37e2bc5504fb6efc2654334d2940af98436
+commit bf84a37e2bc5504fb6efc2654334d2940af98436 -
 Author: Paul Saunders <coruscateor@users.noreply.github.com>
 Date:   Tue Feb 24 19:40:25 2026 +1300
 
@@ -80,7 +80,7 @@ Date:   Tue Feb 24 19:40:25 2026 +1300
     
     - Added the reset and clear_completely methods to the CappedVec struct implementation.
 
-commit 694a86a70789856a39c68d90086511d102693cb5
+commit 694a86a70789856a39c68d90086511d102693cb5 -
 Author: Paul Saunders <coruscateor@users.noreply.github.com>
 Date:   Thu Jul 17 16:52:52 2025 +1200
 
@@ -92,7 +92,7 @@ Date:   Thu Jul 17 16:52:52 2025 +1200
     
     - Re-exported the capped_deque::CappedDeque, capped_map::CappedMap, capped_queue::CappedQueue, capped_set::CappedSet and the capped_vec::CappedVec structs in the create module scope.
 
-commit 44fd5220283b59a9c82978218bbf04177c741120
+commit 44fd5220283b59a9c82978218bbf04177c741120 -
 Author: Paul Saunders <coruscateor@users.noreply.github.com>
 Date:   Tue Jul 15 17:39:41 2025 +1200
 
@@ -100,7 +100,7 @@ Date:   Tue Jul 15 17:39:41 2025 +1200
     
     - Added the capped_deque module and the CappedDeque struct to this module.
 
-commit 8742d2797f080c4e5000523553c73ac9cb4aa216
+commit 8742d2797f080c4e5000523553c73ac9cb4aa216 -
 Author: Paul Saunders <coruscateor@users.noreply.github.com>
 Date:   Tue Jul 8 16:57:17 2025 +1200
 
@@ -110,7 +110,7 @@ Date:   Tue Jul 8 16:57:17 2025 +1200
     
     - Added the capped_set public module containing a CappedSet struct.
 
-commit fdd8dd978b283f620cfdfe295c8949f00fc79757
+commit fdd8dd978b283f620cfdfe295c8949f00fc79757 -
 Author: Paul Saunders <coruscateor@users.noreply.github.com>
 Date:   Fri Jul 4 18:07:22 2025 +1200
 
@@ -122,7 +122,7 @@ Date:   Fri Jul 4 18:07:22 2025 +1200
     
     - Added the capped_vec public module and moved the CappedVec struct and its tests into it.
 
-commit fb400360dd50f6c8f7e8af2c99e3b315e10a9be0
+commit fb400360dd50f6c8f7e8af2c99e3b315e10a9be0 -
 Author: Paul Saunders <coruscateor@users.noreply.github.com>
 Date:   Wed Jul 2 17:53:22 2025 +1200
 
