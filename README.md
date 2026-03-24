@@ -120,13 +120,50 @@ Collections with compile-time set capacities.
 
 ```
 
+<br/>
+
+## What Are Capped Collections?
+
+Capped collection objects are structured around the core array type making them suitable for situations where you only need to collect a few items at a time.
+
+<br/>
+
+## Stability Matrix
+
+| Object         | Status        |
+| -------------- | ------------- |
+| CappedMap      | Not Tested    |
+| CappedQueue    | Not Tested    |
+| CappedSet      | Not Tested    |
+| CappedVec      | Mostly Tested |
+| CappedVecDeque | Broken        |
+
+<br/>
+
+## Features
+
+| Feature     | Description                               |
+| ----------- | ----------------------------------------- |
+| no_std      | Include the no_std crate-level attribute. |
+| serde       | Enable serde support (incomplete).        |
+
+<br/>
+
 ## Todo:
 
 - Add more documentation
-- Add code examples
+- Add more code examples
 - Add more tests
 - Clean-up the code
-- Add more collection types.
+
+<br/>
+
+## Maybe:
+
+- Add a capped linked list with an accompanying Rc type.
+- Add a capped priority queue type.
+
+<br/>
 
 ## Code Style
 
