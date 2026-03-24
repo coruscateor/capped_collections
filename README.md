@@ -2,10 +2,10 @@
 
 # Capped Collections
 
-[![Crates.io](https://img.shields.io/crates/v/mapage_lib)](https://crates.io/crates/mapage_lib)
+[![Crates.io](https://img.shields.io/crates/v/capped_collections)](https://crates.io/crates/capped_collections)
 [![License](https://img.shields.io/badge/license-MIT%2FApache-blue)](#license)
-[![Downloads](https://img.shields.io/crates/d/mapage_lib)](https://crates.io/crates/mapage_lib)
-[![Docs](https://docs.rs/mapage_lib/badge.svg)](https://docs.rs/mapage_lib/latest/mapage_lib/)
+[![Downloads](https://img.shields.io/crates/d/capped_collections)](https://crates.io/crates/capped_collections)
+[![Docs](https://docs.rs/capped_collections/badge.svg)](https://docs.rs/capped_collections/latest/capped_collections/)
 [![Twitch Status](https://img.shields.io/twitch/status/coruscateor)](https://www.twitch.tv/coruscateor)
 
 [X](https://twitter.com/Coruscateor) | 
@@ -162,6 +162,8 @@ Capped collection objects are structured around the core array type making them 
 
 - Add a capped linked list with an accompanying Rc type.
 - Add a capped priority queue type.
+- Add ordered map and set types.
+- Add collection construction macros
 
 <br/>
 
@@ -172,6 +174,7 @@ This project uses a coding style the emphasises the use of white space over keep
 So this:
 
 ```rust
+
 fn bar()
 {
 }
@@ -188,6 +191,7 @@ fn foo()
 Not this:
 
 ```rust
+
 fn bar(){}
 
 fn foo()

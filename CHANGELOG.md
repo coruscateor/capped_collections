@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## Version 0.2.0 (1_/03/2026)
+## Version 0.2.0 (2_/03/2026)
 
 ### Added
 
@@ -31,8 +31,6 @@ Verify
 
 - Added the push_insert_remove, first_last, try_index_try_index_mut, contains, iterators and basic_slices test functions to the capped_vec_tests module.
 
-?
-
 commit 4dcf28b8f599fb73bb50c82e3cbed97dbffd72d1
 
 -- Added the remove_entry and remove methods to the CappedMap struct.
@@ -48,12 +46,6 @@ commit ac5eabf269161cf0e5237230cf3486b7324c93fe
 -- Added the paste dependency.
 
 Removed
-
-commit ac5eabf269161cf0e5237230cf3486b7324c93fe
-
-- Added the accessorise dependency.
-
-- Added the paste dependency.
 
 - Added a has_capacity method to the CappedVec sturct.
 
@@ -78,6 +70,14 @@ commit 8742d2797f080c4e5000523553c73ac9cb4aa216
 commit fdd8dd978b283f620cfdfe295c8949f00fc79757
 
 - Added the inc_dec dependency.
+
+commit 0d6fd4d08c0a661f80d281741dc5369299ab108b
+
+- Added the package authors field.
+
+commit c144fc991809533f02a1126a4503aa51659b10d4
+
+- Added the no_std feature.
 
 
 
@@ -153,6 +153,32 @@ commit fb400360dd50f6c8f7e8af2c99e3b315e10a9be0
 
 -- Updated the version string "0.2.0-alpha".
 
+commit db583c7aa18bd9a5c0084e680dea7f57becb065b
+
+- Updated the readme
+
+commit 0d6fd4d08c0a661f80d281741dc5369299ab108b
+
+-- Updated the package version string to "0.2.0-beta".
+
+- Updated the package keywords and categories.
+
+-- Assembled the changlog notes and prepared the changelog to have notes added to it.
+    
+- Ran cargo update
+
+commit c144fc991809533f02a1126a4503aa51659b10d4
+
+- Updated the minimum expected version of the serde dependency to 1.0.228.
+
+- Replaced std module references with the core module references in various places in the project.
+
+- Replaced doc_auto_cfg with doc_cfg in the docsrs cfg_attr in the crate root module.
+
+--- FUTURE COMMIT ---
+
+--- Updated the package version string to "0.2.0".
+
 
 
 ### Deprecated
@@ -160,6 +186,14 @@ commit fb400360dd50f6c8f7e8af2c99e3b315e10a9be0
 
 
 ### Removed
+
+commit 0d6fd4d08c0a661f80d281741dc5369299ab108b
+
+- Removed the corlib dependency.
+
+-- Removed the paste dependency.
+
+Added in this version.
 
 
 
