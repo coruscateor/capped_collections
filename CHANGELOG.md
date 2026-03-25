@@ -77,9 +77,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Replaced doc_auto_cfg with doc_cfg in the docsrs cfg_attr in the crate root module.
 
---- FUTURE COMMIT ---
-
---- Updated the package version string to "0.2.0".
+- Updated the package version string to "0.2.0".
 
 
 
