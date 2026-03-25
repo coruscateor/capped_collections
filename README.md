@@ -164,6 +164,7 @@ Capped collection objects are structured around the core array type making them 
 - Add a capped priority queue type.
 - Add ordered map and set types.
 - Add collection construction macros
+- Add a capped string type.
 
 <br/>
 
